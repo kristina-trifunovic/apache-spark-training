@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="apache-spark-training_DefaultArtifact">
+    <output-path>$PROJECT_DIR$/out/artifacts/apache_spark_training_DefaultArtifact</output-path>
+    <root id="archive" name="default_artifact.jar">
+      <element id="module-output" name="apache-spark-training" />
+    </root>
+  </artifact>
+</component>
