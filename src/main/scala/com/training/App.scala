@@ -1,4 +1,4 @@
-package org.example
+package com.training
 
 import org.apache.spark.{SparkConf, SparkContext}
 
