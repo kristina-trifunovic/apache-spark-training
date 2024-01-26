@@ -22,4 +22,18 @@ class DataManipulation {
     mappedCarts.join(mappedUsers)
   }
 
+  def cogroup(carts: RDD[Cart], users: RDD[User]): RDD[(Int, (Iterable[Cart], Iterable[User]))] = {
+    val mappedCarts = carts.map(cart => (cart.userId, cart))
+    val mappedUsers = users.map(user => (user.id, user))
+    mappedCarts.cogroup(mappedUsers)
+  }
+
+  def cartesian(carts: RDD[Cart], users: RDD[User]): RDD[(Cart, User)] = {
+    carts.cartesian(users)
+  }
+
+  def pipe(products: RDD[Product]) = {
+    products.map(product => product.description).pipe("grep officially")
+  }
+
 }

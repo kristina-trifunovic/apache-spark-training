@@ -10,7 +10,7 @@ import java.net.URL
 class UserAPI {
 
   def getUsers: RDD[User] = {
-    val url = new URL("https://dummyjson.com/users?limit=10")
+    val url = new URL("https://dummyjson.com/users?limit=3")
     val lines = IOUtils.toString(url, "UTF-8").replace("\"type\"", "\"hairType\"")
     val userContainer = upickle.default.read[UserContainer](lines)
     sc.parallelize(userContainer.users)

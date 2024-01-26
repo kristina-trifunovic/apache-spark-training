@@ -10,7 +10,7 @@ import java.net.URL
 class CartAPI {
 
   def getCarts: RDD[Cart] = {
-    val url = new URL("https://dummyjson.com/carts")
+    val url = new URL("https://dummyjson.com/carts?limit=3")
     val lines = IOUtils.toString(url, "UTF-8")
     val cartContainer = upickle.default.read[CartContainer](lines)
     sc.parallelize(cartContainer.carts)
