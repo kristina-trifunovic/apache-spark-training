@@ -16,8 +16,14 @@ class ProductAPI {
     sc.parallelize(productContainer.products)
   }
 
-}
+  def skipNthNumOfProductsLimit10(numOfProductsToSkip: Int): RDD[Product] = {
+    val url = new URL(s"https://dummyjson.com/products?skip=$numOfProductsToSkip&limit=10")
+    val lines = IOUtils.toString(url, "UTF-8")
+    val productContainer = upickle.default.read[ProductContainer](lines)
+    sc.parallelize(productContainer.products)
+  }
 
+}
 
 case class ProductContainer(products: List[Product])
 case class Product(id: Int, title: String, description: String, price: Int, discountPercentage: Int,
