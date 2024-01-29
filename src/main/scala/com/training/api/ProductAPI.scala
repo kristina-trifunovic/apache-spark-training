@@ -1,6 +1,6 @@
 package com.training.api
 
-import com.training.App.sc
+import com.training.TransformationMethods.sc
 import org.apache.commons.io.IOUtils
 import org.apache.spark.rdd.RDD
 import upickle.default._

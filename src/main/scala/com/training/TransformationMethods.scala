@@ -7,7 +7,7 @@ import org.apache.spark.sql.SparkSession
 /**
  * @author Kristina Trifunovic
  */
-object App {
+object TransformationMethods {
   // Set up Spark configuration
   val spark: SparkSession = SparkSession.builder.appName("spark_training").master("local[*]").getOrCreate()
   val sc: SparkContext = spark.sparkContext
